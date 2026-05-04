@@ -497,7 +497,12 @@ plt.scatter(global_points[:,0], global_points[:,1], s=2, color='black')
 plt.title("Skewness with smoothing")
 plt.show()
 
-np.savez("mesh_data.npz",
+
+################## SAVE DATA FOR OTHER SCRIPTS ####################
+file_path = os.path.dirname(os.path.abspath(__file__))
+npz_file = os.path.join(file_path, "mesh_data.npz")
+
+np.savez(npz_file,
         points=global_points,
         cells=cells,
         edges=edges)
